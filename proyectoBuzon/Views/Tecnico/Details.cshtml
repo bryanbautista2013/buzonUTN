@@ -1,0 +1,61 @@
+﻿@model proyectoBuzon.Models.Tecnico
+
+@{
+    ViewData["Title"] = "Información";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+
+<h2>Información</h2>
+
+<div>
+    <h4>Técnico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CedulaTecnico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CedulaTecnico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombresTecnico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombresTecnico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidosTecnico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApellidosTecnico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoTecnico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoTecnico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pasword)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pasword)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoTecnico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CorreoTecnico)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdTecnico">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

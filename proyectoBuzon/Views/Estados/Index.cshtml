@@ -1,0 +1,101 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Estado>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+<link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/boostrap/3.3.1/css/boostrap.min.css">
+
+
+
+
+<center>
+
+    <h1>
+        <font color="Black" face="Comic Sans MS,arial">Listado Quejas </font>
+    </h1>
+    <hr>
+
+    <font color="red" face="Comic Sans MS,arial,verdana">N. Pendientes: @ViewData["totalpen"]</font><br>
+    <font face="Comic Sans MS,arial,verdana">N. En Espera: @ViewData["totalespera"]</font><br>
+    <font color="blue" face="Comic Sans MS,arial,verdana">N. Resueltas: @ViewData["totalres"]</font><br>
+    <font color="green" face="Comic Sans MS,arial,verdana">Total Número de Quejas: @ViewData["totalquejas"]</font>
+
+</center>
+<br>
+<div class="col-md-4">
+
+</div>
+
+
+<div class="container">
+    <div class="table-responsive">
+    
+        <table class="table">
+            @*<thead>
+                    <tr class="danger">
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdEstado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NomEstado)
+                        </th>
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>*@
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.IdEstado)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NomEstado)
+                        </td>
+                        <td>
+                            @*<a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdEstado">Edit</a> |
+                                <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.IdEstado">Details</a> |
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdEstado">Delete</a>|*@
+                            <a class="btn btn-info" asp-action="listarEstado" asp-controller="Resolver" asp-route-id="@item.IdEstado">LISTAR ESTADO</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
+
+
+
+
+@*<table class="table-bordered">
+
+        <tr>
+
+            <td>
+                @Html.ActionLink("PENDIENTE","listarEstado/1", "Resolver", null, new { @class = "btn btn-success btn-lg" })
+            </td>
+
+            <td>
+                @Html.ActionLink("SOLUCIONADO", "listarEstado/2", "Resolver", null, new { @class = "btn btn-danger btn-lg" })
+            </td>
+
+        </tr>
+
+
+    </table>*@
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+﻿
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout_Cliente.cshtml";
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<CENTER>
+    <center>
+        <h1>
+            <font color="Black" face="Comic Sans MS,arial">Bienvenido Cliente </font>
+        </h1>
+        <hr>
+    </center>
+    <div>
+        <img src="~/images/USER.jpg" width="200" height="200">
+    </div>
+
+    <center>
+        <h3>
+            <font color="Black" face="Comic Sans MS,arial">Seleccione una opción </font>
+        </h3>
+        <hr>
+    </center>
+
+    <a class="btn btn-danger fas fa-check-circle btn-lg" asp-controller="Quejas" asp-action="Create"> Crear Queja</a>
+    <a class="btn btn-success far fa-check-circle btn-lg" asp-controller="Sugerencias" asp-action="Create"> Crear Sugerencia</a>
+    <hr>
+</CENTER>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Tecnico>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+
+<center>
+    <h1>
+        <font color="Black" face="Comic Sans MS,arial">Listado Técnico </font>
+    </h1>
+    <hr>
+</center>
+
+<p>
+    <a class="fas fa-user-plus btn-lg" asp-action="Create"> Crear Técnico</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaTecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombresTecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidosTecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoTecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pasword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorreoTecnico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CedulaTecnico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombresTecnico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApellidosTecnico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefonoTecnico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pasword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CorreoTecnico)
+                </td>
+                <td>
+                    <a color="black" class="far fa-edit btn-info btn-sm"  asp-action="Edit" asp-route-id="@item.IdTecnico">Edit</a> |
+                    <a color="green" class="far fa-list-alt btn-success btn-sm " asp-action="Details" asp-route-id="@item.IdTecnico">Details</a> 
+                    @*<a asp-action="Delete" asp-route-id="@item.IdTecnico">Delete</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Sugerencias>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_AdminSuge.cshtml";
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/boostrap/3.3.1/css/boostrap.min.css">
+
+<center>
+    <h1>
+        <font color="Black" face="Comic Sans MS,arial">Listado Sugerencias </font>
+    </h1>
+    <hr>
+</center>
+
+
+
+@*<td>
+        @Html.ActionLink("<< ATRAS", "IndexSolucionadas", "Quejas", null, new { @class = "btn btn-success btn-lg" })
+    </td>*@
+
+
+<div class="container">
+    <div class="table-responsive">
+        <a class="fas fa-arrow-alt-circle-left btn-lg" asp-controller="Admin" asp-action="Index">  Regresar</a>
+
+        @*<p>
+            <a asp-action="Create">NUEVA SUGERENCIA</a>
+        </p>*@
+        <table class="table table-striped table-bordered table-hover ">
+            <thead>
+                <tr class="info">
+
+                    <th>
+                        CLIENTE
+                    </th>
+                    <th>
+                        TIPO DE SUGERENCIA
+                    </th>
+                    <th>
+                        DESCRIPCIÓN
+                    </th>
+                    <th>
+                        FECHA
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdClNavigation.NombresCl)
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdTiposugNavigation.NombreTipoq)
+
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.DescripcionS)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaS)
+
+                        </td>
+                        @*<td>
+                            <a asp-action="Edit" asp-route-id="@item.IdS">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.IdS">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.IdS">Eliminar</a>
+                        </td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @*<P>
+            @Html.ActionLink("<< ATRAS", "Index", "Admin", null, new { @class = "fas fa - undo - alt btn -lg" })
+        </P>*@
+    </div>
+</div>

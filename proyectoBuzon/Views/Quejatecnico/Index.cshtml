@@ -1,0 +1,53 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Quejatecnico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdQNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTecnicoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdQNavigation.DescripcionQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTecnicoNavigation.ApellidosTecnico)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdQuejatecnico">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdQuejatecnico">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdQuejatecnico">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
